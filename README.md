@@ -26,13 +26,51 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+(.map) -  returns 
+      new array of elements
+      calls back each element, index and returns each in turn
+      manipulate or reshape data.
+      const mappedCityStates = data.map((state) => {
+  return {'city': state.city, 'state': state.state};
+});
+
+(.reduce) -returns new array of elements
+    takes callback which is reducer function
+    reducer function takes previous value and next value, known as accumulator and currentValue
+    maniuplate and reshape data into single value.
+    const reduceStatePopulations = data.reduce((total, state) => {
+  return total += state.population;
+}, 0);
+console.log(reduceStatePopulations);
+
+(.filter) -  returns new array of elements
+    calls back each element, index and return each in turn
+    takes callback that runs 'truth' test. if true returns elements, else ignores
+    filter out array of elements by specific condition.
+    const filterLargeStates = data.filter((state) => {
+  return state.population >= 650000;
+});
+
 2. Explain the difference between a callback and a higher order function.
+
+(callback function) is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+A (high-order function (HOF)) is a function that returns a function, as opposed to a simple value.
 
 3. Explain what a closure is.
 
+A (closure) gives you access to an outer function's scope from an inner function. 
+
 4. Describe the four principles of the 'this' keyword.
 
+Is the function called by new.
+Is the function called by call(), apply(), or bind().
+Is the function called as a method, ie: obj.func().
+Is the function called in the global scope.
+
 5. Why do we need super() in an extended class?
+
+(super) is used to connect the extended class to the parent class.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
